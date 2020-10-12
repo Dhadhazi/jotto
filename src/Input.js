@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { string } from "prop-types";
+import PropTypes from "prop-types";
 
 export const Input = ({ secretWord }) => {
   const [currentGuess, setCurrentGuess] = React.useState("");
@@ -15,7 +15,14 @@ export const Input = ({ secretWord }) => {
           value={currentGuess}
           onChange={(e) => setCurrentGuess(e.target.value)}
         />
-        <button data-test="submit-button" className="btn btn-primary">
+        <button
+          data-test="submit-button"
+          className="btn btn-primary"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentGuess("");
+          }}
+        >
           Submit
         </button>
       </form>
