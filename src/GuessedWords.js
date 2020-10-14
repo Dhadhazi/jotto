@@ -3,7 +3,7 @@ import guessedWordsContext from "./contexts/guessedWordsContext";
 import languageContext from "./contexts/languageContext";
 import stringsModule from "./helpers/strings";
 
-const GuessedWords = () => {
+export const GuessedWords = () => {
   const [guessedWords] = guessedWordsContext.useGuessedWords();
   const language = React.useContext(languageContext);
   let contents;
@@ -47,5 +47,3 @@ const GuessedWords = () => {
   }
   return <div data-test="component-guessed-words">{contents}</div>;
 };
-
-export default GuessedWords;
